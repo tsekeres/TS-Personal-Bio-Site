@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const PrivateRoute = ({ component: Component, user, ...rest }) => {
+const AuthedRoute = ({ component: Component, admin, ...rest }) => {
   const routeChecker = (taco) =>
     user ? (
       <Component {...taco} user={user} />
@@ -12,7 +12,7 @@ const PrivateRoute = ({ component: Component, user, ...rest }) => {
   return <Route {...rest} render={(props) => routeChecker(props)} />;
 };
 
-PrivateRoute.propTypes = {
+AuthedRoute.propTypes = {
   component: PropTypes.func,
   user: PropTypes.any,
 };

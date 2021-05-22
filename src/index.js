@@ -1,6 +1,7 @@
-import firebase from 'firebase/app';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import firebase from 'firebase';
 import firebaseConfig from './helpers/apiKeys';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -11,9 +12,11 @@ firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.Fragment>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </React.Fragment>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

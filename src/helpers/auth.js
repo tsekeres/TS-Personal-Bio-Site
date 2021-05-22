@@ -1,13 +1,22 @@
+import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
+import 'firebase/auth';
+import { useHistory } from 'react-router-dom';
 
-const signInUser = () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider);
-};
+function App() {
+  const [admin, setAdmin] = useState(null);
 
-const signOutUser = () =>
-  new Promise((resolve, reject) => {
-    firebase.auth().signOut().then(resolve).catch(reject);
-  });
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((authed) => {
+      if (authed && (authed.uid === process.env.REACT_APP_ADMIN_UID)) {
+        setAdmin(true);
+      } else if (admin || admin === null) {
+        setAdmin(false);
+      }
+    });
+  }, []);
+  
+  return(...);
+}
 
-export { signInUser, signOutUser };
+export default App;
