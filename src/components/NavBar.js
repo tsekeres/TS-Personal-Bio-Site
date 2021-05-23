@@ -8,11 +8,9 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  Button,
 } from 'reactstrap';
-import { signInUser, signOutUser } from '../helpers/auth';
 
-const NavBar = ({ user }) => {
+const NavBar = ({ admin }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -20,13 +18,23 @@ const NavBar = ({ user }) => {
   const authenticated = () => (
     <>
       <NavItem>
-        <Link className='nav-link' to='/'>
-          Link Name
+        <Link className="nav-link" to="/about">
+          About Me
         </Link>
       </NavItem>
       <NavItem>
-        <Link className='nav-link' to='/'>
-          Link Name 2
+        <Link className="nav-link" to="/contact">
+          Contact
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link className="nav-link" to="/projects">
+          Projects
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link className="nav-link" to="/technologies">
+          Technologies
         </Link>
       </NavItem>
     </>
@@ -35,24 +43,24 @@ const NavBar = ({ user }) => {
   return (
     <div>
       <Navbar color='light' light expand='md'>
-        <NavbarBrand href='/home'>Brand Name</NavbarBrand>
+        <NavbarBrand href='/home'>Tad Sekeres</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className='mr-auto' navbar>
-            {user && authenticated()}
-            {user !== null && (
-              <NavItem>
-                {user ? (
-                  <Button color='danger' onClick={signOutUser}>
-                    Sign Out
-                  </Button>
-                ) : (
-                  <Button color='info' onClick={signInUser}>
-                    Sign In
-                  </Button>
-                )}
-              </NavItem>
-            )}
+            {admin && authenticated()}
+            {admin !== null && <>
+                <NavItem>
+                  <Link className="nav-link" to="/projects-update">
+                    Update Projects
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link className="nav-link" to="/technologies-update">
+                    Update Technologies
+                  </Link>
+                </NavItem>
+              </>
+            }
           </Nav>
         </Collapse>
       </Navbar>
@@ -61,7 +69,7 @@ const NavBar = ({ user }) => {
 };
 
 NavBar.propTypes = {
-  user: PropTypes.any,
+  admin: PropTypes.any,
 };
 
 export default NavBar;

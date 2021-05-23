@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Home({ user }) {
+function Home({ admin }) {
   return (
     <div className='user-welcome'>
       <h1>Welcome to </h1>
       <hr></hr>
-      {user ? <h2>Come On In</h2> : <h2>Please Log In</h2>}
+      {admin ? <h2>Hey Tad</h2> : <h2>Welcome visitor</h2>}
     </div>
   );
 }
 
 Home.propTypes = {
-  user: PropTypes.any,
+  admin: PropTypes.any,
 };
 
 export default Home;
