@@ -18,22 +18,22 @@ const NavBar = ({ admin }) => {
   const authenticated = () => (
     <>
       <NavItem>
-        <Link className="nav-link" to="/about">
+        <Link className='nav-link' to='/about'>
           About Me
         </Link>
       </NavItem>
       <NavItem>
-        <Link className="nav-link" to="/contact">
+        <Link className='nav-link' to='/contact'>
           Contact
         </Link>
       </NavItem>
       <NavItem>
-        <Link className="nav-link" to="/projects">
+        <Link className='nav-link' to='/projects'>
           Projects
         </Link>
       </NavItem>
       <NavItem>
-        <Link className="nav-link" to="/technologies">
+        <Link className='nav-link' to='/technologies'>
           Technologies
         </Link>
       </NavItem>
@@ -47,15 +47,15 @@ const NavBar = ({ admin }) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className='mr-auto' navbar>
-            {admin && authenticated()}
+            {authenticated()}
             {admin !== null && <>
                 <NavItem>
-                  <Link className="nav-link" to="/projects-update">
+                  <Link className='nav-link' to='/projects-update'>
                     Update Projects
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link className="nav-link" to="/technologies-update">
+                  <Link className='nav-link' to='/technologies-update'>
                     Update Technologies
                   </Link>
                 </NavItem>
@@ -69,7 +69,7 @@ const NavBar = ({ admin }) => {
 };
 
 NavBar.propTypes = {
-  admin: PropTypes.any,
+  admin: PropTypes.exact,
 };
 
 export default NavBar;

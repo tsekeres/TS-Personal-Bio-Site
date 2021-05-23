@@ -28,7 +28,7 @@ function Routes({ admin }) {
         <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
         <Route exact path='/contact' component={Contact} />
-        <Route exact path='/pprojects' component={Projects} />
+        <Route exact path='/projects' component={Projects} />
         <Route exact path='/technologies' component={Technologies} />
         <AuthedRoute
           exact
@@ -49,7 +49,7 @@ function Routes({ admin }) {
 }
 
 Routes.propTypes = {
-  admin: PropTypes.any,
+  admin: PropTypes.exact,
 };
 
 export default Routes;
