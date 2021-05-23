@@ -69,7 +69,7 @@ const NavBar = ({ admin }) => {
 };
 
 NavBar.propTypes = {
-  admin: PropTypes.exact,
+  admin: PropTypes.any,
 };
 
 export default NavBar;
