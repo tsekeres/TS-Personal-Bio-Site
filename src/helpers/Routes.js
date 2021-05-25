@@ -49,7 +49,7 @@ function Routes({ admin }) {
 }
 
 Routes.propTypes = {
-  admin: PropTypes.exact,
+  admin: PropTypes.any,
 };
 
 export default Routes;
