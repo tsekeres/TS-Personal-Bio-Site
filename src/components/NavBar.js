@@ -8,7 +8,9 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
+  Button,
 } from 'reactstrap';
+import { signInUser, signOutUser } from '../helpers/auth';
 
 const NavBar = ({ admin }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,23 +20,13 @@ const NavBar = ({ admin }) => {
   const authenticated = () => (
     <>
       <NavItem>
-        <Link className="nav-link" to="/about">
-          About Me
+        <Link className='nav-link' to='/projects-update'>
+          Update Projects
         </Link>
       </NavItem>
       <NavItem>
-        <Link className="nav-link" to="/contact">
-          Contact
-        </Link>
-      </NavItem>
-      <NavItem>
-        <Link className="nav-link" to="/projects">
-          Projects
-        </Link>
-      </NavItem>
-      <NavItem>
-        <Link className="nav-link" to="/technologies">
-          Technologies
+        <Link className='nav-link' to='/technologies-update'>
+          Update Technologies
         </Link>
       </NavItem>
     </>
@@ -42,27 +34,47 @@ const NavBar = ({ admin }) => {
 
   return (
     <div>
-      <Navbar color='light' light expand='md'>
-        <NavbarBrand href='/home'>Tad Sekeres</NavbarBrand>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/home">Tad Sekeres</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className='mr-auto' navbar>
+          <Nav className="mr-auto" navbar>
             {admin && authenticated()}
-            {admin !== null && <>
-                <NavItem>
-                  <Link className="nav-link" to="/projects-update">
-                    Update Projects
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link className="nav-link" to="/technologies-update">
-                    Update Technologies
-                  </Link>
-                </NavItem>
-              </>
-            }
+            {admin !== null && (
+              <NavItem>
+                {admin ? (
+                  <Button color="danger" onClick={signOutUser}>
+                    Sign Out
+                  </Button>
+                ) : (
+                  <Button color="info" onClick={signInUser}>
+                    Admin?
+                  </Button>
+                )}
+              </NavItem>
+            )}
           </Nav>
         </Collapse>
+          <NavItem>
+            <Link className="nav-link" to="/about">
+              About Me
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link className="nav-link" to="/contact">
+              Contact
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link className="nav-link" to="/projects">
+              Projects
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link className="nav-link" to="/technologies">
+              Technologies
+            </Link>
+          </NavItem>
       </Navbar>
     </div>
   );
