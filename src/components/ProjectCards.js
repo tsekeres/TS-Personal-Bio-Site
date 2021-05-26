@@ -9,35 +9,21 @@ import {
   CardLink
 } from 'reactstrap';
 
-const ProjectCards = ({
-  description,
-  githubLink,
-  netlifyLink,
-  screenshot,
-  techUsed,
-  title
-}) => (
-  <div>
-    <Card>
-      <CardImg top width="100%" src={screenshot} alt="Card image cap" />
-      <CardBody>
-        <CardTitle tag="h5">{title}</CardTitle>
-        <CardText>{description}</CardText>
-        <CardText>{techUsed}</CardText>
-        <CardLink href={netlifyLink}>View Live Project</CardLink>
-        <CardLink href={githubLink}>View GitHub Repo</CardLink>
-      </CardBody>
-    </Card>
-  </div>
+const ProjectCards = ({ project }) => (
+  <Card>
+    <CardImg top width="100%" src={project.screenshot} alt="Card image cap" />
+    <CardBody>
+      <CardTitle tag="h5">{project.title}</CardTitle>
+      <CardText>{project.description}</CardText>
+      <CardText>{project.techUsed}</CardText>
+      <CardLink href={project.netlifyLink}>View Live Project</CardLink>
+      <CardLink href={project.githubLink}>View GitHub Repo</CardLink>
+    </CardBody>
+  </Card>
 );
 
 ProjectCards.propTypes = {
-  description: PropTypes.string,
-  githubLink: PropTypes.Link,
-  netlifyLink: PropTypes.Link,
-  screenshot: PropTypes.src,
-  techUsed: PropTypes.string,
-  title: PropTypes.string,
+  project: PropTypes.object,
 };
 
 export default ProjectCards;

@@ -21,28 +21,34 @@ AuthedRoute.propTypes = {
   admin: PropTypes.any,
 };
 
-function Routes({ admin }) {
+function Routes({ admin, projects, setProjects }) {
   return (
     <div>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/contact' component={Contact} />
-        <Route exact path='/projects' component={Projects} />
-        <Route exact path='/technologies' component={Technologies} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={Contact} />
+        <Route
+          exact
+          path="/projects"
+          component={() => (
+            <Projects projects={projects} setProjects={setProjects} />
+          )}
+        />
+        <Route exact path="/technologies" component={Technologies} />
         <AuthedRoute
           exact
-          path='/projects-update'
-          admin={admin}
+          path="/projects-update"
           component={UpdateProjects}
+          admin={admin}
         />
         <AuthedRoute
           exact
-          path='/technologies-update'
+          path="/technologies-update"
           admin={admin}
           component={UpdateTechnologies}
         />
-        <Route path='*' component={Home} />
+        <Route path="*" component={Home} />
       </Switch>
     </div>
   );
@@ -50,6 +56,8 @@ function Routes({ admin }) {
 
 Routes.propTypes = {
   admin: PropTypes.any,
+  projects: PropTypes.array,
+  setProjects: PropTypes.func,
 };
 
 export default Routes;
