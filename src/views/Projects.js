@@ -9,13 +9,7 @@ function Projects({ projects, setProjects }) {
         {projects?.map((projectInfo) => (
           <ProjectCards
             key={projectInfo.firebaseKey}
-            firebaseKey={projectInfo.firebaseKey}
-            title={projectInfo.title}
-            description={projectInfo.description}
-            githubLink={projectInfo.githubLink}
-            netlifyLink={projectInfo.netlifyLink}
-            screenshot={projectInfo.screenshot}
-            techUsed={projectInfo.techUsed}
+            project={projectInfo}
             setProjects={setProjects}
           />
         ))}

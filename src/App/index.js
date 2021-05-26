@@ -27,14 +27,14 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <>
       <NavBar admin={admin} />
       <Routes
         admin={admin}
         projects={projects}
         setProjects={setProjects}
       />
-    </div>
+    </>
   );
 }
 
