@@ -20,7 +20,7 @@ const NavBar = ({ admin }) => {
   const authenticated = () => (
     <>
       <NavItem>
-        <Link className='nav-link' to='/projects-update/'>
+        <Link className='nav-link' to='/projects-update'>
           Update Projects
         </Link>
       </NavItem>

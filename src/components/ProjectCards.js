@@ -18,6 +18,7 @@ const ProjectCards = ({ project }) => (
       <CardText>{project.techUsed}</CardText>
       <CardLink href={project.netlifyLink}>View Live Project</CardLink>
       <CardLink href={project.githubLink}>View GitHub Repo</CardLink>
+      <CardLink href={project.loomLink}>View Project Video</CardLink>
     </CardBody>
   </Card>
 );

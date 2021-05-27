@@ -13,6 +13,7 @@ const ProjectForm = ({
   screenshot,
   netlifyLink,
   githubLink,
+  loomLink,
   description,
   techUsed,
 }) => {
@@ -21,13 +22,14 @@ const ProjectForm = ({
     screenshot: screenshot || '',
     netlifyLink: netlifyLink || '',
     githubLink: githubLink || '',
+    loomLink: loomLink || '',
     description: description || '',
     techUsed: techUsed || '',
   });
   const history = useHistory();
 
   const handleInputChange = (e) => {
-    setProjects((prevState) => ({
+    setProject((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
@@ -46,6 +48,7 @@ const ProjectForm = ({
         screenshot: '',
         netlifyLink: '',
         githubLink: '',
+        loomLink: '',
         description: '',
         techUsed: '',
         firebaseKey: null,
@@ -54,77 +57,88 @@ const ProjectForm = ({
   };
 
   return (
-    <div className='project-form'>
-      <Form id='addProjectForm' autoComplete='off' onSubmit={handleSubmit}>
+    <div className="project-form">
+      <Form id="addProjectForm" autoComplete="off" onSubmit={handleSubmit}>
         <h2>{formTitle}</h2>
         <FormGroup>
-          <Label for='title'>Title:</Label>
+          <Label for="title">Title:</Label>
           <Input
-            name='title'
-            id='title'
+            name="title"
+            id="title"
             value={project.title}
-            type='text'
-            placeholder='Enter a Title'
+            type="text"
+            placeholder="Enter a Title"
             onChange={handleInputChange}
           />
         </FormGroup>
         <FormGroup>
-          <Label for='screenshot'>Screenshot: </Label>
+          <Label for="screenshot">Screenshot: </Label>
           <Input
-            name='screenshot'
-            id='screenshot'
+            name="screenshot"
+            id="screenshot"
             value={project.screenshot}
-            type='img'
-            placeholder='Enter a Screenshot'
+            type="img"
+            placeholder="Enter a Screenshot"
             onChange={handleInputChange}
           />
         </FormGroup>
         <FormGroup>
-          <Label for='netlifyLink'>Netlify Link: </Label>
+          <Label for="netlifyLink">Netlify Link: </Label>
           <Input
-            name='netlifyLink'
-            id='netlifyLink'
+            name="netlifyLink"
+            id="netlifyLink"
             value={project.netlifyLink}
-            type='url'
-            placeholder='Enter a Link'
+            type="url"
+            placeholder="Enter a Link"
             onChange={handleInputChange}
           />
         </FormGroup>
         <FormGroup>
-          <Label for='githubLink'>GitHub Link: </Label>
+          <Label for="githubLink">GitHub Link: </Label>
           <Input
-            name='githubLink'
-            id='githubLink'
+            name="githubLink"
+            id="githubLink"
             value={project.githubLink}
-            type='url'
-            placeholder='Enter a Link'
+            type="url"
+            placeholder="Enter a Link"
             onChange={handleInputChange}
           />
         </FormGroup>
         <FormGroup>
-          <Label for='description'>Description: </Label>
+          <Label for="loomLink">Video Link: </Label>
           <Input
-            name='description'
-            id='description'
+            name="loomLink"
+            id="loomLink"
+            value={project.loomLink}
+            type="url"
+            placeholder="Enter a Link"
+            onChange={handleInputChange}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="description">Description: </Label>
+          <Input
+            name="description"
+            id="description"
             value={project.description}
-            type='text'
-            placeholder='Enter a Description'
+            type="text"
+            placeholder="Enter a Description"
             onChange={handleInputChange}
           />
         </FormGroup>
         <FormGroup>
-          <Label for='techUsed'>Tech Used: </Label>
+          <Label for="techUsed">Tech Used: </Label>
           <Input
-            name='techUsed'
-            id='techUsed'
+            name="techUsed"
+            id="techUsed"
             value={project.techUsed}
-            type='text'
-            placeholder='Enter a List of Tech Used'
+            type="text"
+            placeholder="Enter a List of Tech Used"
             onChange={handleInputChange}
           />
         </FormGroup>
 
-        <Button type='submit'>Submit</Button>
+        <Button type="submit">Submit</Button>
       </Form>
     </div>
   );
@@ -137,6 +151,7 @@ ProjectForm.propTypes = {
   screenshot: PropTypes.string,
   netlifyLink: PropTypes.string,
   githubLink: PropTypes.string,
+  loomLink: PropTypes.string,
   description: PropTypes.string,
   techUsed: PropTypes.string,
   firebaseKey: PropTypes.string,

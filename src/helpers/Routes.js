@@ -22,7 +22,6 @@ AuthedRoute.propTypes = {
 };
 
 function Routes({ admin, projects, setProjects }) {
-  console.warn(projects);
   return (
     <div>
       <Switch>
@@ -39,7 +38,7 @@ function Routes({ admin, projects, setProjects }) {
         <Route exact path="/technologies" component={Technologies} />
         <AuthedRoute
           exact
-          path="/projects-update/"
+          path="/projects-update"
           component={() => (<UpdateProjects projects={projects} setProjects={setProjects} />)}
           admin={admin}
         />
