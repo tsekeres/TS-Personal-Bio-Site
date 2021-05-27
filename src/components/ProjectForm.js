@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import {
+  Button, Form, FormGroup, Label, Input
+} from 'reactstrap';
 import PropTypes from 'prop-types';
+import { addProject, updateProject } from '../helpers/data/ProjectData';
 
 const ProjectForm = ({
   formTitle,
@@ -131,12 +134,12 @@ ProjectForm.propTypes = {
   formTitle: PropTypes.string.isRequired,
   setProjects: PropTypes.func,
   title: PropTypes.string,
-  screenshot: PropTypes.image,
-  netlifyLink: ,
-  githubLink,
-  description,
-  techUsed,
+  screenshot: PropTypes.string,
+  netlifyLink: PropTypes.string,
+  githubLink: PropTypes.string,
+  description: PropTypes.string,
+  techUsed: PropTypes.string,
   firebaseKey: PropTypes.string,
 };
 
-export default StudentForm;
+export default ProjectForm;

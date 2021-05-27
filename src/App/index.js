@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import firebase from 'firebase';
 import Routes from '../helpers/Routes';
 import NavBar from '../components/NavBar';
-import getProjects from '../helpers/data/ProjectData';
+import { getProjects } from '../helpers/data/ProjectData';
 
 const adminUIDs = [
   process.env.REACT_APP_ADMIN_TAD
