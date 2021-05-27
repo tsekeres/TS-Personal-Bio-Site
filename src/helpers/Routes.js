@@ -39,7 +39,7 @@ function Routes({ admin, projects, setProjects }) {
         <AuthedRoute
           exact
           path="/projects-update"
-          component={UpdateProjects}
+          component={() => (<UpdateProjects projects={projects} setProjects={setProjects} />)}
           admin={admin}
         />
         <AuthedRoute
