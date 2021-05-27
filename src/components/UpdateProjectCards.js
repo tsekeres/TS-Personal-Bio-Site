@@ -32,8 +32,6 @@ const UpdateProjectCards = ({
     }
   };
 
-  console.warn(project.screenshot);
-
   return (
     <Card>
       <CardImg top width='100%' src={project.screenshot} alt='Card image cap' />
