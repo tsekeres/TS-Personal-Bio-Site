@@ -1,24 +1,27 @@
 import React from 'react';
+import profileImage from '../assets/Profile.jpg';
 
 export default function About() {
   return (
     <>
-      <div></div>
+      <div>
+        <img src={profileImage} alt="Image of me" />
+      </div>
       <div>
         <h5>
-          I am a Physical Education Teacher of 20 years with a Master&apos;s
-          degree in Educational Leadership. I love to teach skills and enjoy
-          &quot;aha moments&quot; more than anything in life. Both for myself and
-          for those I am teaching. I&apos;ve often been told that I&apos;m good at
-          explaining things. I think this is because I love breaking down physical skills or concepts into logical, buildable steps or chunks. This is highly
-          relateable to coding in specific and teamwork in general. The
-          development process and the teamwork environment is full of the logical,
-          broken down elements that I enjoy and that make sense to me. It is also
-          full of those personal and team &quot;aha moments&quot; that bring so much
-          joy. I want to explore the development world to use my skills and
-          talents in a new environment. I want to solve mysteries, straighten
-          crooked pathways, rebuild bridges that are broken and find the aha
-          moments that lie in wait.
+          Teaching physical education to elementary school children for twenty
+          years has taught me about myself. I love teaching people relevant
+          skills and helping them find the &quot;aha&quot; moment when learning
+          becomes life. Part of that job is breaking physical skills or concepts
+          into logical, buildable steps. I&apos;ve found this teaching skill set
+          to be highly relatable to coding and working on a team. The
+          development process within a teamwork environment are full of the
+          logical, simplified elements that I enjoy. The process also produces
+          those &quot;aha&quot; moments that bring so much joy.
+          <br></br>I am ready to dive into the development world and use my
+          skills and talents in a new environment. I want to solve mysteries,
+          straighten crooked pathways, and rebuild bridges that are broken,
+          grasping the moments of inspiration along the way.
         </h5>
       </div>
     </>

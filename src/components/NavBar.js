@@ -30,7 +30,7 @@ const NavBar = ({ admin }) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <Navbar fixed="top" color="light" light expand="md">
         <NavbarBrand href="/home">Tad Sekeres | Software Developer</NavbarBrand>
         <NavItem>
           <Link className="nav-link" to="/about">
@@ -52,22 +52,22 @@ const NavBar = ({ admin }) => {
             Technologies
           </Link>
         </NavItem>
-          <Nav className="mr-auto" navbar>
-            {admin && authenticated()}
-            {admin !== null && (
-              <NavItem>
-                {admin ? (
-                  <Button color="danger" onClick={signOutUser}>
-                    Sign Out
-                  </Button>
-                ) : (
-                  <Button color="info" onClick={signInUser}>
-                    Admin?
-                  </Button>
-                )}
-              </NavItem>
-            )}
-          </Nav>
+        <Nav className="mr-auto" navbar>
+          {admin && authenticated()}
+          {admin !== null && (
+            <NavItem>
+              {admin ? (
+                <Button color="danger" onClick={signOutUser}>
+                  Sign Out
+                </Button>
+              ) : (
+                <Button color="info" onClick={signInUser}>
+                  Admin?
+                </Button>
+              )}
+            </NavItem>
+          )}
+        </Nav>
       </Navbar>
     </div>
   );

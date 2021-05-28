@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { addTechnologies, updateTechnologies } from '../helpers/data/TechnologiesData';
 
 const TechnologyForm = ({
+  formTitle,
   setTechnologies,
   techImage,
   techURL,
@@ -47,7 +48,8 @@ const TechnologyForm = ({
 
   return (
     <div className="technology-form">
-      <Form id="addProjectForm" autoComplete="off" onSubmit={handleSubmit}>
+      <Form id="addTechnologyForm" autoComplete="off" onSubmit={handleSubmit}>
+        <h2>{formTitle}</h2>
         <FormGroup>
           <Label for="techImage">Image:</Label>
           <Input
@@ -89,6 +91,7 @@ const TechnologyForm = ({
 };
 
 TechnologyForm.propTypes = {
+  formTitle: PropTypes.string.isRequired,
   setTechnologies: PropTypes.func,
   techImage: PropTypes.string,
   techURL: PropTypes.string,
