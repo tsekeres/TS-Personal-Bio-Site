@@ -4,6 +4,7 @@ import Routes from '../helpers/Routes';
 import NavBar from '../components/NavBar';
 import { getProjects } from '../helpers/data/ProjectData';
 import { getTechnologies } from '../helpers/data/TechnologiesData';
+import getContacts from '../helpers/data/ContactData';
 
 const adminUIDs = [
   process.env.REACT_APP_ADMIN_TAD
@@ -12,11 +13,13 @@ const adminUIDs = [
 function App() {
   const [projects, setProjects] = useState([]);
   const [technologies, setTechnologies] = useState([]);
+  const [contacts, setContacts] = useState([]);
   const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
     getProjects().then(setProjects);
     getTechnologies().then(setTechnologies);
+    getContacts().then(setContacts);
   }, []);
 
   useEffect(() => {
@@ -38,6 +41,8 @@ function App() {
         setProjects={setProjects}
         technologies={technologies}
         setTechnologies={setTechnologies}
+        contacts={contacts}
+        setContacts={setContacts}
       />
     </>
   );
