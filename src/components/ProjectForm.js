@@ -16,6 +16,7 @@ const ProjectForm = ({
   loomLink,
   description,
   techUsed,
+  firebaseKey,
 }) => {
   const [project, setProject] = useState({
     title: title || '',
@@ -25,6 +26,7 @@ const ProjectForm = ({
     loomLink: loomLink || '',
     description: description || '',
     techUsed: techUsed || '',
+    firebaseKey: firebaseKey || '',
   });
   const history = useHistory();
 

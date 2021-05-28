@@ -9,9 +9,9 @@ import {
 
 const TechnologyCards = ({ tech }) => (
   <Card>
-    <CardImg top width='100%' src={tech.techImage} alt='Card image cap' />
+    <CardImg top width="100%" src={tech.techImage} alt="Card image cap" />
     <CardBody>
-      <CardLink href={tech.techName}>{tech.techName}</CardLink>
+      <CardLink href={tech.techURL}>{tech.techName}</CardLink>
     </CardBody>
   </Card>
 );

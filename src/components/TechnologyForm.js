@@ -9,16 +9,20 @@ import { addTechnologies, updateTechnologies } from '../helpers/data/Technologie
 const TechnologyForm = ({
   setTechnologies,
   techImage,
-  techName
+  techURL,
+  techName,
+  firebaseKey
 }) => {
   const [tech, setTech] = useState({
     techImage: techImage || '',
-    techName: techName || '',   
+    techURL: techURL || '',
+    techName: techName || '',
+    firebaseKey: firebaseKey || null,
   });
   const history = useHistory();
 
   const handleInputChange = (e) => {
-    setTechnologies((prevState) => ({
+    setTech((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
@@ -34,6 +38,7 @@ const TechnologyForm = ({
 
       setTech({
         techImage: '',
+        techURL: '',
         techName: '',
         firebaseKey: null,
       });
@@ -55,6 +60,17 @@ const TechnologyForm = ({
           />
         </FormGroup>
         <FormGroup>
+          <Label for="techURL">URL:</Label>
+          <Input
+            name="techURL"
+            id="techURL"
+            value={tech.techURL}
+            type="text"
+            placeholder="Enter a URL"
+            onChange={handleInputChange}
+          />
+        </FormGroup>
+        <FormGroup>
           <Label for="techName">Tech Name: </Label>
           <Input
             name="techName"
@@ -72,9 +88,11 @@ const TechnologyForm = ({
   );
 };
 
-ProjectForm.propTypes = {
+TechnologyForm.propTypes = {
   setTechnologies: PropTypes.func,
   techImage: PropTypes.string,
+  techURL: PropTypes.string,
+  techName: PropTypes.string,
   firebaseKey: PropTypes.string,
 };
 

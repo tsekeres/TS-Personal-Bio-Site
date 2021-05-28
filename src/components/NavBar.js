@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
-  Collapse,
+  // Collapse,
   Navbar,
-  NavbarToggler,
+  // NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
@@ -13,10 +13,6 @@ import {
 import { signInUser, signOutUser } from '../helpers/auth';
 
 const NavBar = ({ admin }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
   const authenticated = () => (
     <>
       <NavItem>
@@ -35,9 +31,27 @@ const NavBar = ({ admin }) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/home">Tad Sekeres</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <NavbarBrand href="/home">Tad Sekeres | Software Developer</NavbarBrand>
+        <NavItem>
+          <Link className="nav-link" to="/about">
+            About Me
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link className="nav-link" to="/contact">
+            Contact
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link className="nav-link" to="/projects">
+            Projects
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link className="nav-link" to="/technologies">
+            Technologies
+          </Link>
+        </NavItem>
           <Nav className="mr-auto" navbar>
             {admin && authenticated()}
             {admin !== null && (
@@ -54,27 +68,6 @@ const NavBar = ({ admin }) => {
               </NavItem>
             )}
           </Nav>
-        </Collapse>
-          <NavItem>
-            <Link className="nav-link" to="/about">
-              About Me
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link className="nav-link" to="/contact">
-              Contact
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link className="nav-link" to="/projects">
-              Projects
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link className="nav-link" to="/technologies">
-              Technologies
-            </Link>
-          </NavItem>
       </Navbar>
     </div>
   );

@@ -28,20 +28,21 @@ const UpdateTechnologyCards = ({ tech, setTechnologies }) => {
 
   return (
     <Card>
-      <CardImg top width="100%" src={tech.techImage} alt="Card image cap" />
+      <CardImg top width='100%' src={tech.techImage} alt='Card image cap' />
       <CardBody>
-        <CardLink href={tech.techName}>{tech.techName}</CardLink>
-        <Button color="danger" onClick={() => handleClick("delete")}>
+        <CardLink href={tech.techURL}>{tech.techName}</CardLink>
+        <Button color='danger' onClick={() => handleClick('delete')}>
           Delete Tech
         </Button>
-        <Button color="info" onClick={() => handleClick("update")}>
-          {updating ? "Close Form" : "Update Tech"}
+        <Button color='info' onClick={() => handleClick('update')}>
+          {updating ? 'Close Form' : 'Update Tech'}
         </Button>
         {updating && (
           <TechnologyForm
             setTechnologies={setTechnologies}
             firebaseKey={tech.firebaseKey}
             techImage={tech.techImage}
+            techURL={tech.techURL}
             techName={tech.techName}
           />
         )}
@@ -50,7 +51,7 @@ const UpdateTechnologyCards = ({ tech, setTechnologies }) => {
   );
 };
 
-UpdateProjectCards.propTypes = {
+UpdateTechnologyCards.propTypes = {
   tech: PropTypes.object,
   setTechnologies: PropTypes.func,
 };
