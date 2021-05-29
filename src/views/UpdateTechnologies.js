@@ -12,7 +12,7 @@ function UpdateTechnologies({ technologies, setTechnologies }) {
           setTechnologies={setTechnologies}
         />
       </div>
-      <div className="card-container">
+      <div className="card-container update-Tech-Cards">
         {technologies?.map((techInfo) => (
           <UpdateTechnologyCards
             key={techInfo.firebaseKey}
