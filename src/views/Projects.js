@@ -5,7 +5,7 @@ import ProjectCards from '../components/ProjectCards';
 function Projects({ projects, setProjects }) {
   return (
     <>
-      <div className="card-container">
+      <div className="card-container projects-view">
         {projects?.map((projectInfo) => (
           <ProjectCards
             key={projectInfo.firebaseKey}

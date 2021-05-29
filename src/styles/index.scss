@@ -4,19 +4,75 @@
 body {
   background-color: $favColor;
 }
+
 .card-container {
   display: flex;
   flex-flow: row wrap;
   margin-top: 60px;
+  justify-content: center;
 
   .card {
-    width: 300px;
-    margin: 5px;
+    width: 350px;
+    height: auto;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .card-body {
     flex: none;
   }
+}
+
+.card-container-2 {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 120px;
+  justify-content: center;
+
+  .tech-image {
+    width: 60px;
+    height: auto;
+    padding: 5px;
+  }
+
+  .card {
+    width: 125px;
+    margin: 15px;
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-body {
+    flex: none;
+  }
+}
+
+.about-content{
+  margin: 50px 250px;
+  padding: 10px;
+  border: black 10px;
+  color: white;
+}
+
+.about-content-h5 {
+  margin: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.profile-image {
+  margin-top: 130px;
+  border-radius: 20%;
+  height: 300px;
+  border: black 20px;
 }
 
 .project-form {

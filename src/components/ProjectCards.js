@@ -10,14 +10,16 @@ import {
 } from 'reactstrap';
 
 const ProjectCards = ({ project }) => (
-  <Card>
+  <Card className="project-card">
     <CardImg top width="100%" src={project.screenshot} alt="Card image cap" />
     <CardBody>
       <CardTitle tag="h5">{project.title}</CardTitle>
       <CardText>{project.description}</CardText>
       <CardText>{project.techUsed}</CardText>
       <CardLink href={project.netlifyLink}>View Live Project</CardLink>
+      <br></br>
       <CardLink href={project.githubLink}>View GitHub Repo</CardLink>
+      <br></br>
       <CardLink href={project.loomLink}>View Project Video</CardLink>
     </CardBody>
   </Card>

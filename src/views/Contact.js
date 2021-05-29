@@ -5,7 +5,7 @@ import ContactCard from '../components/ContactCard';
 function Contacts({ contacts, setContacts }) {
   return (
     <>
-      <div className='card-container'>
+      <div className='card-container contact-view'>
         {contacts?.map((contactInfo) => (
           <ContactCard
             key={contactInfo.firebaseKey}
