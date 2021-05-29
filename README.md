@@ -7,9 +7,9 @@ This is my Personal Biography site that will be a touchpoint for users wanting t
 https://github.com/tsekeres/TS-Personal-Bio-Site/projects/2
 
 Link to the deployed project:
-https://ts-shark-tank.netlify.app/
+https://ts-personal-bio-site.netlify.app
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b22cc840-04b4-4c38-82bc-03216ded3802/deploy-status)](https://app.netlify.com/sites/ts-shark-tank/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a3492941-0fa1-4fd0-b3fc-318d820466e1/deploy-status)](https://app.netlify.com/sites/ts-personal-bio-site/deploys)
 
 Description of the user:
 My user is a person looking to check in on my coding progress and to find how to contact me and know my hireablility.
