@@ -7,7 +7,7 @@ This is my Personal Biography site that will be a touchpoint for users wanting t
 https://e14-react-pinterest.netlify.app/
 
 #### Project board
-https://github.com/lindseysatterfield/react-pinterest/projects/1
+https://github.com/tsekeres/TS-Personal-Bio-Site/projects/2
 
 #### User description
 As a user, I am able to login via Google authentication.
