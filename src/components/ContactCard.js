@@ -6,10 +6,10 @@ import {
 import profileImage from '../assets/Profile.jpg';
 
 const ContactCard = ({ contact }) => (
-  <Card>
-    <CardImg top width='100%' src={profileImage} alt='Card image cap' />
+  <Card className="contact-card">
+    <CardImg top width="100%" src={profileImage} alt="Card image cap" />
     <CardBody>
-      <CardTitle tag='h5'>{contact.name}</CardTitle>
+      <CardTitle tag="h5">{contact.name}</CardTitle>
       <CardText>{contact.email}</CardText>
       <CardText>{contact.phone}</CardText>
       <CardLink href={contact.githubURL}>{contact.github}</CardLink>
