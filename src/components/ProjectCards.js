@@ -11,7 +11,7 @@ import {
 
 const ProjectCards = ({ project }) => (
   <Card className="project-card">
-    <CardImg top width="100%" src={project.screenshot} alt="Card image cap" />
+    <CardImg top width="90%" src={project.screenshot} alt="Card image cap" />
     <CardBody>
       <CardTitle tag="h5">{project.title}</CardTitle>
       <CardText>{project.description}</CardText>
