@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
-  // Collapse,
+  Collapse,
   Navbar,
-  // NavbarToggler,
+  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
@@ -13,6 +13,10 @@ import {
 import { signInUser, signOutUser } from '../helpers/auth';
 
 const NavBar = ({ admin }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   const authenticated = () => (
     <>
       <NavItem>
@@ -32,6 +36,8 @@ const NavBar = ({ admin }) => {
     <div>
       <Navbar fixed="top" color="light" light expand="md">
         <NavbarBrand href="/home">Tad Sekeres | Software Developer</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar></Collapse>
         <NavItem>
           <Link className="nav-link" to="/about">
             About Me
