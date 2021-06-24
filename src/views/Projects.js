@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import ProjectCards from '../components/ProjectCards';
 
 function Projects({ projects, setProjects }) {
+  console.warn(projects);
+
   return (
     <>
       <div className="card-container projects-view">
